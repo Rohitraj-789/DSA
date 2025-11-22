@@ -22,22 +22,15 @@ public class Solution {
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
-            if(fast == slow){
-                slow = head;
-                while(slow != fast){
+            if(slow == fast){
+                ListNode temp = head;
+                while(temp != slow){
+                    temp = temp.next;
                     slow = slow.next;
-                    fast = fast.next;
                 }
                 return slow;
             }
         }
-        // ListNode temp = head;
-        // while(temp != slow){
-        //     temp = temp.next;
-        //     if(slow == null) return null;
-        //     slow = slow.next;
-        // }
-        // return slow;
         return null;
     }
 }
